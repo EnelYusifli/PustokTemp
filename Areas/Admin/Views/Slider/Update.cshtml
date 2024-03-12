@@ -1,0 +1,33 @@
+﻿@model Slider
+<div class="container-fluid">
+    <h1>Update</h1>
+    <form method="post">
+        <div class="mb-3">
+            <label for="Title1" class="form-label">Title1</label>
+            <input asp-for="Title1" class="form-control" id="Title1">
+            <span asp-validation-for="Title1"></span>
+        </div>
+        <div class="mb-3">
+            <label for="Title2" class="form-label">Title2</label>
+            <input asp-for="Title2" class="form-control" id="Title2">
+            <span asp-validation-for="Title2"></span>
+        </div>
+        <div class="mb-3">
+            <label for="ImageUrl" class="form-label">ImageUrl</label>
+            <input asp-for="ImageUrl" class="form-control" id="ImageUrl">
+            <span asp-validation-for="ImageUrl"></span>
+        </div>
+        <div class="mb-3">
+            <label for="Desc" class="form-label">Desc</label>
+            <input asp-for="Desc" class="form-control" id="Desc">
+            <span asp-validation-for="Desc"></span>
+        </div>
+        <div class="mb-3">
+            <label for="RedirectUrl" class="form-label">RedirectUrl</label>
+            <input asp-for="RedirectUrl" class="form-control" id="RedirectUrl">
+            <span asp-validation-for="RedirectUrl"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+

@@ -1,7 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using PustokTemp.DAL;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<PustokDbContext>(opt =>
+{
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("default"));
+});
+
 
 var app = builder.Build();
 
@@ -19,6 +27,11 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.MapControllerRoute(
+     name: "areas",
+     pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}"
+   );
 
 app.MapControllerRoute(
     name: "default",
