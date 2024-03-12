@@ -23,13 +23,35 @@ public class SliderController : Controller
     }
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Create(Slider slider)
+    public async Task<IActionResult> Create(Slider slider)
     {
         if (!ModelState.IsValid) return View();
+        if(!(slider.ImageFile.ContentType == "image/jpeg" || slider.ImageFile.ContentType == "image/png"))
+        {
+            ModelState.AddModelError("ImageFile","Content type must be jpeg or png");
+            return View();
+        }
+        if (slider.ImageFile.Length > 2097152)
+        {
+            ModelState.AddModelError("ImageFile", "Size type must be less than 2mb");
+            return View();
+        }
+        string fileName=slider.ImageFile.FileName;
+        if (fileName.Length > 14)
+        {
+           fileName = fileName.Substring(fileName.Length - 14,14);
+        }
+           fileName=Guid.NewGuid().ToString()+fileName;
+        string path = $"C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\sliders\\{fileName}";
+        using (FileStream fileStream = new(path, FileMode.Create))
+        {
+        slider.ImageFile.CopyTo(fileStream);
+        }
         slider.CreatedDate=DateTime.UtcNow.AddHours(4);
         slider.ModifiedDate=DateTime.UtcNow.AddHours(4);
-        _context.Sliders.Add(slider);
-        _context.SaveChanges();
+        slider.ImageUrl = fileName;
+        await _context.Sliders.AddAsync(slider);
+        await _context.SaveChangesAsync();
         return RedirectToAction("Index");
     }
     public IActionResult Update(int id)
@@ -44,22 +66,45 @@ public class SliderController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public IActionResult Update(Slider slider)
+    public async Task<IActionResult> Update(Slider slider)
     {
-        if (!ModelState.IsValid) return View();
         Slider sld = _context.Sliders.FirstOrDefault(x => x.Id == slider.Id);
         if (sld == null)
         {
             return NotFound();
         }
+        if (!ModelState.IsValid) return View();
+        if (!(slider.ImageFile.ContentType == "image/jpeg" || slider.ImageFile.ContentType == "image/png"))
+        {
+            ModelState.AddModelError("ImageFile", "Content type must be jpeg or png");
+            return View();
+        }
+        if (slider.ImageFile.Length > 2097152)
+        {
+            ModelState.AddModelError("ImageFile", "Size type must be less than 2mb");
+            return View();
+        }
+        string fileName = slider.ImageFile.FileName;
+        if (fileName.Length > 14)
+        {
+            fileName = fileName.Substring(fileName.Length - 14, 14);
+        }
+        fileName = Guid.NewGuid().ToString() + fileName;
+        string oldPath = $"C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\sliders\\{sld.ImageUrl}";
+        System.IO.File.Delete(oldPath);
+        string newPath = $"C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\sliders\\{fileName}";
+        using (FileStream fileStream = new(newPath, FileMode.Create))
+        {
+            slider.ImageFile.CopyTo(fileStream);
+        }
+        sld.ModifiedDate = DateTime.UtcNow.AddHours(4);
+        sld.ImageUrl = fileName;
         sld.Title1 = slider.Title1;
         sld.Title2 = slider.Title2;
         sld.Desc = slider.Desc;
+        sld.RedirectUrlText = slider.RedirectUrlText;
         sld.RedirectUrl = slider.RedirectUrl;
-        sld.ImageUrl = slider.ImageUrl;
-        slider.ModifiedDate = DateTime.UtcNow.AddHours(4);
-        _context.SaveChanges();
-
+        await _context.SaveChangesAsync();
         return RedirectToAction("Index");
     }
 

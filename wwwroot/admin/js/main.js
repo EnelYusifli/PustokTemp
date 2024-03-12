@@ -1,8 +1,8 @@
 ﻿let deleteBtns = document.querySelectorAll(".delete-btn");
 
 deleteBtns.forEach(btn => {
-    let url=btn.getAttribute("href")
-    btn.addEventListener("click", function (e){
+    let url = btn.getAttribute("href")
+    btn.addEventListener("click", function (e) {
         e.preventDefault();
         Swal.fire({
             title: "Are you sure?",
