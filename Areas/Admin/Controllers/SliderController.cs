@@ -102,6 +102,7 @@ public class SliderController : Controller
         sld.Title1 = slider.Title1;
         sld.Title2 = slider.Title2;
         sld.Desc = slider.Desc;
+        sld.IsDeactive = slider.IsDeactive;
         sld.RedirectUrlText = slider.RedirectUrlText;
         sld.RedirectUrl = slider.RedirectUrl;
         await _context.SaveChangesAsync();
@@ -113,6 +114,8 @@ public class SliderController : Controller
         Slider? sld = _context.Sliders.FirstOrDefault(x => x.Id == id);
         if (sld == null)
             return NotFound();
+        string path = $"C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\sliders\\{sld.ImageUrl}";
+        System.IO.File.Delete(path);
         _context.Sliders.Remove(sld);
         _context.SaveChanges();
         return Ok();
