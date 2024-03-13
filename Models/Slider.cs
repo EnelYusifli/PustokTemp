@@ -20,5 +20,5 @@ public class Slider:BaseEntity
     public string RedirectUrlText { get; set; }
     public string? ImageUrl { get; set; }
     [NotMapped]
-    public IFormFile ImageFile { get; set; }
+    public IFormFile? ImageFile { get; set; }
 }
