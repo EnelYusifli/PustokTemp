@@ -35,8 +35,8 @@
                     <td>@item.PosterImgFile</td>
                     <td><img style="width:130px" src="~/uploads/books/@item.BookImages.FirstOrDefault().Url" alt="Book Image" /></td>
                     <td>
-                        <a asp-action="update" asp-controller="slider" asp-route-id="@item.Id" class="btn btn-warning">Update</a>
-                        <a asp-action="delete" asp-controller="slider" asp-route-id="@item.Id" class="btn btn-danger delete-btn">Delete</a>
+                        <a asp-action="update" asp-controller="book" asp-route-id="@item.Id" class="btn btn-warning">Update</a>
+                        <a asp-action="delete" asp-controller="book" asp-route-id="@item.Id" class="btn btn-danger delete-btn">Delete</a>
                     </td>
                 </tr>
             }

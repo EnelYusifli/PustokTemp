@@ -4,7 +4,7 @@
     List<Genre> genres = ViewBag.Genres;
 }
 <div class="container-fluid">
-    <h1>Create</h1>
+    <h1>Update</h1>
     <form method="post" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="Title" class="form-label">Title</label>
@@ -37,22 +37,22 @@
             <label for="DiscountPercent" class="form-label">DiscountPercent</label>
             <input asp-for="DiscountPercent" class="form-control">
             <span asp-validation-for="DiscountPercent" style="color:red"></span>
-        </div> 
+        </div>
         <div class="mb-3">
             <label for="StockCount" class="form-label">StockCount</label>
             <input asp-for="StockCount" class="form-control">
             <span asp-validation-for="StockCount" style="color:red"></span>
-        </div> 
+        </div>
         <div class="mb-3">
             <label for="IsFeatured" class="form-label">IsFeatured</label>
             <input asp-for="IsFeatured" class="form">
             <span asp-validation-for="IsFeatured" style="color:red"></span>
-        </div> 
+        </div>
         <div class="mb-3">
             <label for="IsNew" class="form-label">IsNew</label>
             <input asp-for="IsNew" class="form">
             <span asp-validation-for="IsNew" style="color:red"></span>
-        </div> 
+        </div>
         <div class="mb-3">
             <label for="IsBestSeller" class="form-label">IsBestSeller</label>
             <input asp-for="IsBestSeller" class="form">
@@ -83,8 +83,9 @@
             <input asp-for="DetailImgFiles" class="form"><br>
             <span asp-validation-for="DetailImgFiles" style="color:red"></span>
         </div>
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-primary">Update</button>
     </form>
 </div>
+
 
 
