@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0GcgH+sy46D8wGwoEPcR3Bu33cyfaur3/Au9xj1bEl8=",
+  "Hash": "YAG9XkrGtyM52zeJCpHQnm9KP+WpO6PSqkg5CCHdzqA=",
   "Source": "PustokTemp",
   "BasePath": "_content/PustokTemp",
   "Mode": "Default",
@@ -37295,12 +37295,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\sliders\\364660dc-26cd-48a2-a113-59f2496345154-slider-1.jpg",
+      "Identity": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\sliders\\31aed543-35bb-43b6-96d4-b53df1f19d994-slider-1.jpg",
       "SourceId": "PustokTemp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\",
       "BasePath": "_content/PustokTemp",
-      "RelativePath": "uploads/sliders/364660dc-26cd-48a2-a113-59f2496345154-slider-1.jpg",
+      "RelativePath": "uploads/sliders/31aed543-35bb-43b6-96d4-b53df1f19d994-slider-1.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -37311,7 +37311,45 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\sliders\\364660dc-26cd-48a2-a113-59f2496345154-slider-1.jpg"
+      "OriginalItemSpec": "wwwroot\\uploads\\sliders\\31aed543-35bb-43b6-96d4-b53df1f19d994-slider-1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\sliders\\3a27b0cd-ba48-4614-8d3b-27110b3433174-slider-1.jpg",
+      "SourceId": "PustokTemp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\",
+      "BasePath": "_content/PustokTemp",
+      "RelativePath": "uploads/sliders/3a27b0cd-ba48-4614-8d3b-27110b3433174-slider-1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\sliders\\3a27b0cd-ba48-4614-8d3b-27110b3433174-slider-1.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\sliders\\45d95911-508d-4dc0-bec8-40607800737anner-small.jpg",
+      "SourceId": "PustokTemp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\",
+      "BasePath": "_content/PustokTemp",
+      "RelativePath": "uploads/sliders/45d95911-508d-4dc0-bec8-40607800737anner-small.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\sliders\\45d95911-508d-4dc0-bec8-40607800737anner-small.jpg"
     },
     {
       "Identity": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\sliders\\465fdf85-7f18-4d7e-8435-ad501d0d07eblider-2-ai.png",
@@ -37371,6 +37409,25 @@
       "OriginalItemSpec": "wwwroot\\uploads\\sliders\\53074314-05e5-41de-99f6-29c4e87bfceb2-slider-2.jpg"
     },
     {
+      "Identity": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\sliders\\5c7151f1-d34f-4154-a160-568a2d8804df-seller-bg.jpg",
+      "SourceId": "PustokTemp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\",
+      "BasePath": "_content/PustokTemp",
+      "RelativePath": "uploads/sliders/5c7151f1-d34f-4154-a160-568a2d8804df-seller-bg.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\sliders\\5c7151f1-d34f-4154-a160-568a2d8804df-seller-bg.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\sliders\\63b8fea8-fe80-4a7b-bf63-d6367d857712lider-1-ai.png",
       "SourceId": "PustokTemp",
       "SourceType": "Discovered",
@@ -37388,6 +37445,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\sliders\\63b8fea8-fe80-4a7b-bf63-d6367d857712lider-1-ai.png"
+    },
+    {
+      "Identity": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\sliders\\dc5e5802-362a-44ac-bd0a-e91760494073-seller-bg.jpg",
+      "SourceId": "PustokTemp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\",
+      "BasePath": "_content/PustokTemp",
+      "RelativePath": "uploads/sliders/dc5e5802-362a-44ac-bd0a-e91760494073-seller-bg.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\sliders\\dc5e5802-362a-44ac-bd0a-e91760494073-seller-bg.jpg"
     }
   ]
 }
