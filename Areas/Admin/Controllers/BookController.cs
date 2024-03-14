@@ -109,7 +109,7 @@ public class BookController : Controller
     {
         ViewBag.Genres = _context.Genres.ToList();
         ViewBag.Authors = _context.Authors.ToList();
-        Book? book = _context.Books.FirstOrDefault(x => x.Id == id);
+        Book? book = _context.Books.Include(x=>x.BookImages).FirstOrDefault(x => x.Id == id);
         if (book == null) throw new Exception();
         return View(book);
     }
@@ -117,9 +117,9 @@ public class BookController : Controller
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Update(Book book)
     {
-        ViewBag.Genres = _context.Genres.ToList();
-        ViewBag.Authors = _context.Authors.ToList();
-        Book? existBook = _context.Books.FirstOrDefault(x => x.Id == book.Id);
+        Book? existBook = _context.Books
+            .Include(x=>x.BookImages)
+            .FirstOrDefault(x => x.Id == book.Id);
         if (existBook is null) throw new Exception();
         if (!ModelState.IsValid) return View();
         ViewBag.Genres = _context.Genres.ToList();
@@ -136,7 +136,8 @@ public class BookController : Controller
                 ModelState.AddModelError("HoverImgFile", "Size type must be less than 2mb");
                 return View();
             }
-            FileExtension.DeleteFile(_env.WebRootPath, "uploads/books", existBook.HoverImgFile.FileName);
+            string fileName = existBook.BookImages.Where(x => x.IsPoster == false).FirstOrDefault().Url;
+            FileExtension.DeleteFile(_env.WebRootPath, "uploads/books", fileName);
             BookImage hoverBookImage = new()
             {
                 Book = book,
@@ -157,7 +158,8 @@ public class BookController : Controller
                 ModelState.AddModelError("PosterImgFile", "Size type must be less than 2mb");
                 return View();
             }
-            FileExtension.DeleteFile(_env.WebRootPath, "uploads/books", existBook.PosterImgFile.FileName);
+            string fileName = existBook.BookImages.Where(x => x.IsPoster == true).FirstOrDefault().Url;
+            FileExtension.DeleteFile(_env.WebRootPath, "uploads/books", fileName);
             BookImage posterBookImage = new()
             {
                 Book = book,
@@ -189,19 +191,7 @@ public class BookController : Controller
                 await _context.BookImages.AddAsync(bookImage);
             }
         }
-        existBook.Title = book.Title;
-        existBook.Desc = book.Desc;
-        existBook.BookCode = book.BookCode;
-        existBook.CostPrice = book.CostPrice;
-        existBook.SalePrice = book.SalePrice;
-        existBook.DiscountPercent = book.DiscountPercent;
-        existBook.StockCount = book.StockCount;
-        existBook.IsFeatured = book.IsFeatured;
-        existBook.IsNew = book.IsNew;
-        existBook.IsBestSeller = book.IsBestSeller;
-        existBook.IsInStock = book.IsInStock;
-        existBook.GenreId = book.GenreId;
-        existBook.AuthorId = book.AuthorId;
+        _context.Entry(existBook).CurrentValues.SetValues(book);
         await _context.SaveChangesAsync();
         return RedirectToAction("Index");
     }

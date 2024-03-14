@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using PustokMVC.Business.Implementations;
+using PustokMVC.Business.Interfaces;
 using PustokTemp.DAL;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,8 +11,7 @@ builder.Services.AddDbContext<PustokDbContext>(opt =>
 {
     opt.UseSqlServer(builder.Configuration.GetConnectionString("default"));
 });
-
-
+builder.Services.AddScoped<IGenreService, GenreService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

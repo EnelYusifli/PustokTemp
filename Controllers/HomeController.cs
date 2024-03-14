@@ -18,7 +18,8 @@ public class HomeController : Controller
     {
         HomeViewModel homeViewModel = new HomeViewModel()
         {
-            Sliders = await _context.Sliders.ToListAsync()
+            Sliders = await _context.Sliders.ToListAsync(),
+            Books = await _context.Books.Include(x=>x.Author).Include(x=>x.Genre).Include(x=>x.BookImages).ToListAsync()
         };
         return View(homeViewModel);
     }
