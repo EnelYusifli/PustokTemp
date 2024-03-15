@@ -140,7 +140,7 @@ Home Slider Tab
                     <span class="arrow-icon"></span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link best-seller" id=" best-seller" data-toggle="tab" href="#woman" role="tab"
+                    <a class="nav-link best-seller" id="best-seller" data-toggle="tab" href="#woman" role="tab"
                        aria-controls=" best-seller" aria-selected="true">
                         Best Seller products
                     </a>
@@ -148,7 +148,7 @@ Home Slider Tab
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
-                <div class="tab-pane" id="shop" role="tabpanel" aria-labelledby="shop-tab">
+                <div id="shop" role="tabpanel" aria-labelledby="shop-tab">
                     <div class="product-slider multiple-row  slider-border-multiple-row  sb-slick-slider"
                          data-slick-setting='{
                             "autoplay": true,
@@ -164,7 +164,8 @@ Home Slider Tab
                         ]'>
                         @foreach (var item in Model.Books.Where(x => x.IsFeatured == true))
                         {
-
+                            Console.WriteLine(item.IsFeatured);
+                            Console.WriteLine(item.Title);
                             <div class="single-slide">
                                 <div class="product-card">
                                     <div class="product-header">
@@ -218,17 +219,17 @@ Home Slider Tab
                 <div class="tab-pane" id="men" role="tabpanel" aria-labelledby="men-tab">
                     <div class="product-slider multiple-row  slider-border-multiple-row  sb-slick-slider"
                          data-slick-setting='{
-                                        "autoplay": true,
-                                        "autoplaySpeed": 8000,
-                                        "slidesToShow": 5,
-                                        "rows":2,
-                                        "dots":true
-                                    }' data-slick-responsive='[
-                                        {"breakpoint":1200, "settings": {"slidesToShow": 3} },
-                                        {"breakpoint":768, "settings": {"slidesToShow": 2} },
-                                        {"breakpoint":480, "settings": {"slidesToShow": 1} },
-                                        {"breakpoint":320, "settings": {"slidesToShow": 1} }
-                                    ]'>
+                            "autoplay": true,
+                            "autoplaySpeed": 8000,
+                            "slidesToShow": 5,
+                            "rows":1,
+                            "dots":true
+                        }' data-slick-responsive='[
+                            {"breakpoint":1200, "settings": {"slidesToShow": 3} },
+                            {"breakpoint":768, "settings": {"slidesToShow": 2} },
+                            {"breakpoint":480, "settings": {"slidesToShow": 1} },
+                            {"breakpoint":320, "settings": {"slidesToShow": 1} }
+                        ]'>
                         @foreach (var item in Model.Books.Where(x => x.IsNew == true))
                         {
 
@@ -285,56 +286,55 @@ Home Slider Tab
                 <div class="tab-pane" id="woman" role="tabpanel" aria-labelledby="woman-tab">
                     <div class="product-slider multiple-row  slider-border-multiple-row  sb-slick-slider"
                          data-slick-setting='{
-                                        "autoplay": true,
-                                        "autoplaySpeed": 8000,
-                                        "slidesToShow": 5,
-                                        "rows":2,
-                                        "dots":true
-                                    }' data-slick-responsive='[
-                                        {"breakpoint":1200, "settings": {"slidesToShow": 3} },
-                                        {"breakpoint":768, "settings": {"slidesToShow": 2} },
-                                        {"breakpoint":480, "settings": {"slidesToShow": 1} },
-                                        {"breakpoint":320, "settings": {"slidesToShow": 1} }
-                                    ]'>
+                            "autoplay": true,
+                            "autoplaySpeed": 8000,
+                            "slidesToShow": 5,
+                            "rows":1,
+                            "dots":true
+                        }' data-slick-responsive='[
+                            {"breakpoint":1200, "settings": {"slidesToShow": 3} },
+                            {"breakpoint":768, "settings": {"slidesToShow": 2} },
+                            {"breakpoint":480, "settings": {"slidesToShow": 1} },
+                            {"breakpoint":320, "settings": {"slidesToShow": 1} }
+                        ]'>
                         @foreach (var item in Model.Books.Where(x => x.IsBestSeller == true))
                         {
-                            
-                        <div class="single-slide">
-                            <div class="product-card">
-                                <div class="product-header">
-                                    <a href="#" class="author">
-                                        @item.Author.FullName
-                                    </a>
-                                    <h3>
-                                        <a href="product-details.html">
-                                           @item.Title
+                            <div class="single-slide">
+                                <div class="product-card">
+                                    <div class="product-header">
+                                        <a href="#" class="author">
+                                            @item.Author.FullName
                                         </a>
-                                    </h3>
-                                </div>
-                                <div class="product-card--body">
-                                    <div class="card-image">
-                                        <img src="~/uploads/books/@item.BookImages.Where(x=>x.IsPoster==true).FirstOrDefault().Url" alt="">
-                                        <div class="hover-contents">
-                                            <a href="product-details.html" class="hover-image">
-                                                    <img src="~/uploads/books/@item.BookImages.Where(x=>x.IsPoster==false).FirstOrDefault().Url" alt="">
+                                        <h3>
+                                            <a href="product-details.html">
+                                                @item.Title
                                             </a>
-                                            <div class="hover-btns">
-                                                <a href="cart.html" class="single-btn">
-                                                    <i class="fas fa-shopping-basket"></i>
+                                        </h3>
+                                    </div>
+                                    <div class="product-card--body">
+                                        <div class="card-image">
+                                            <img src="~/uploads/books/@item.BookImages.Where(x=>x.IsPoster==true).FirstOrDefault().Url" alt="">
+                                            <div class="hover-contents">
+                                                <a href="product-details.html" class="hover-image">
+                                                    <img src="~/uploads/books/@item.BookImages.Where(x=>x.IsPoster==false).FirstOrDefault().Url" alt="">
                                                 </a>
-                                                <a href="wishlist.html" class="single-btn">
-                                                    <i class="fas fa-heart"></i>
-                                                </a>
-                                                <a href="compare.html" class="single-btn">
-                                                    <i class="fas fa-random"></i>
-                                                </a>
-                                                <a href="#" data-toggle="modal" data-target="#quickModal"
-                                                   class="single-btn">
-                                                    <i class="fas fa-eye"></i>
-                                                </a>
+                                                <div class="hover-btns">
+                                                    <a href="cart.html" class="single-btn">
+                                                        <i class="fas fa-shopping-basket"></i>
+                                                    </a>
+                                                    <a href="wishlist.html" class="single-btn">
+                                                        <i class="fas fa-heart"></i>
+                                                    </a>
+                                                    <a href="compare.html" class="single-btn">
+                                                        <i class="fas fa-random"></i>
+                                                    </a>
+                                                    <a href="#" data-toggle="modal" data-target="#quickModal"
+                                                       class="single-btn">
+                                                        <i class="fas fa-eye"></i>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
                                         <div class="price-block">
                                             @{
                                                 double price = item.SalePrice * ((100 - @item.DiscountPercent) / 100);
@@ -343,14 +343,14 @@ Home Slider Tab
                                             <del class="price-old">@item.SalePrice</del>
                                             <span class="price-discount">@item.DiscountPercent %</span>
                                         </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                }
+                        }
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </section>
 <!--=================================
 Deal of the day
@@ -1674,3 +1674,32 @@ Footer
     </div>
 </div>
     </div>
+<script>
+
+    let featured = document.getElementById('shop');
+    let newArr = document.getElementById('men');
+    let newWoman = document.getElementById('woman');
+
+    function showFeatured() {
+        featured.style.display = 'block';
+        newArr.style.display = 'none';
+        newWoman.style.display = 'none';
+    }
+
+    function showNewArrivals() {
+        featured.style.display = 'none';
+        newArr.style.display = 'block';
+        newWoman.style.display = 'none';
+    }
+
+    function showBestSeller() {
+        featured.style.display = 'none';
+        newArr.style.display = 'none';
+        newWoman.style.display = 'block';
+    }
+
+    document.getElementById('feature-tab').addEventListener('click', showFeatured);
+    document.getElementById('new-tab').addEventListener('click', showNewArrivals);
+    document.getElementById('best-seller').addEventListener('click', showBestSeller);
+
+</script>
