@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "p1DDr3zEGy9kIIH+QtKskC9WYwD3PjILl5otw7yDAaZhmIVZQWDoY7Cm/CR5iUUahhd2biKquSXMRJiXr/YgVg==",
+  "dgSpecHash": "K7N70QPlLVIV/iBZjVlD6ipT4eBm7nzSuc37l30REHrPCXp6H2N5nymbgi96DGfBvoBaj9TCnpXrtdaQ+98TUQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\PustokTemp.csproj",
+  "projectFilePath": "C:\\Users\\Enel\\Desktop\\PustokTemp\\PustokTemp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Enel\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Enel\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

@@ -4111,11 +4111,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\PustokTemp.csproj",
+      "projectUniqueName": "C:\\Users\\Enel\\Desktop\\PustokTemp\\PustokTemp.csproj",
       "projectName": "PustokTemp",
-      "projectPath": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\PustokTemp.csproj",
+      "projectPath": "C:\\Users\\Enel\\Desktop\\PustokTemp\\PustokTemp.csproj",
       "packagesPath": "C:\\Users\\Enel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\obj\\",
+      "outputPath": "C:\\Users\\Enel\\Desktop\\PustokTemp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Enel\\AppData\\Roaming\\NuGet\\NuGet.Config",
