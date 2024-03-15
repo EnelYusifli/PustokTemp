@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PustokTemp.DAL;
 using PustokTemp.Extensions;
@@ -194,5 +195,19 @@ public class BookController : Controller
         _context.Entry(existBook).CurrentValues.SetValues(book);
         await _context.SaveChangesAsync();
         return RedirectToAction("Index");
+    }
+
+    public async Task<IActionResult> Delete(int id)
+    {
+        var existBook = await _context.Books.Include(x=>x.BookImages).FirstOrDefaultAsync(x=>x.Id==id);
+        if (existBook == null) return NotFound();
+        foreach (var bookImg in existBook.BookImages)
+        {
+        FileExtension.DeleteFile(_env.WebRootPath, "uploads/books", bookImg.Url);
+        }
+        _context.Remove(existBook);
+        await _context.SaveChangesAsync();
+
+        return Ok();
     }
 }

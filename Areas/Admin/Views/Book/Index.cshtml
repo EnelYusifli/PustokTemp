@@ -17,7 +17,7 @@
                 <th scope="col">Author</th>
                 <th scope="col">Genre</th>
                 <th scope="col">BookCode</th>
-                <th scope="col">Image</th>
+                <th scope="col">PosterImage</th>
                 <th scope="col">Actions</th>
             </tr>
         </thead>
@@ -32,8 +32,7 @@
                     <td>@item.Author.FullName</td>
                     <td>@item.Genre.Name</td>
                     <td>@item.BookCode</td>
-                    <td>@item.PosterImgFile</td>
-                    <td><img style="width:130px" src="~/uploads/books/@item.BookImages.FirstOrDefault().Url" alt="Book Image" /></td>
+                    <td><img style="width:130px" src="~/uploads/books/@item.BookImages.Where(x=>x.IsPoster==true).FirstOrDefault().Url" alt="Book Image" /></td>
                     <td>
                         <a asp-action="update" asp-controller="book" asp-route-id="@item.Id" class="btn btn-warning">Update</a>
                         <a asp-action="delete" asp-controller="book" asp-route-id="@item.Id" class="btn btn-danger delete-btn">Delete</a>

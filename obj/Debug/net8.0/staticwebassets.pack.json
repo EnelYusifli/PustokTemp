@@ -7861,6 +7861,10 @@
       "PackagePath": "staticwebassets\\uploads\\books\\0b80216b-1abd-4301-9960-30cf6c6a2abc-product-1.jpg"
     },
     {
+      "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\13bb6d0f-518e-4e4b-952f-89c7522e1c50-details-4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\books\\13bb6d0f-518e-4e4b-952f-89c7522e1c50-details-4.jpg"
+    },
+    {
       "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\1a71227d-620e-44f3-98e2-655bb4b3699bproduct-4.jpg",
       "PackagePath": "staticwebassets\\uploads\\books\\1a71227d-620e-44f3-98e2-655bb4b3699bproduct-4.jpg"
     },
@@ -8009,6 +8013,10 @@
       "PackagePath": "staticwebassets\\uploads\\books\\d846bbd3-2ba7-4036-92fe-643126af6b14-details-1.jpg"
     },
     {
+      "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\e079783e-31fe-43f3-bd95-de3210390ff2-details-3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\books\\e079783e-31fe-43f3-bd95-de3210390ff2-details-3.jpg"
+    },
+    {
       "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\e2f410a5-d988-4990-92d5-f5f86bb94caf-details-5.jpg",
       "PackagePath": "staticwebassets\\uploads\\books\\e2f410a5-d988-4990-92d5-f5f86bb94caf-details-5.jpg"
     },
@@ -8021,12 +8029,12 @@
       "PackagePath": "staticwebassets\\uploads\\sliders\\31aed543-35bb-43b6-96d4-b53df1f19d994-slider-1.jpg"
     },
     {
-      "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\sliders\\3a27b0cd-ba48-4614-8d3b-27110b3433174-slider-1.jpg",
-      "PackagePath": "staticwebassets\\uploads\\sliders\\3a27b0cd-ba48-4614-8d3b-27110b3433174-slider-1.jpg"
+      "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\sliders\\321606ee-d472-494b-ad09-1c73ea7c0dd9-details-5.jpg",
+      "PackagePath": "staticwebassets\\uploads\\sliders\\321606ee-d472-494b-ad09-1c73ea7c0dd9-details-5.jpg"
     },
     {
-      "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\sliders\\45d95911-508d-4dc0-bec8-40607800737anner-small.jpg",
-      "PackagePath": "staticwebassets\\uploads\\sliders\\45d95911-508d-4dc0-bec8-40607800737anner-small.jpg"
+      "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\sliders\\3a27b0cd-ba48-4614-8d3b-27110b3433174-slider-1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\sliders\\3a27b0cd-ba48-4614-8d3b-27110b3433174-slider-1.jpg"
     },
     {
       "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\sliders\\465fdf85-7f18-4d7e-8435-ad501d0d07eblider-2-ai.png",
@@ -8051,10 +8059,6 @@
     {
       "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\sliders\\dc5e5802-362a-44ac-bd0a-e91760494073-seller-bg.jpg",
       "PackagePath": "staticwebassets\\uploads\\sliders\\dc5e5802-362a-44ac-bd0a-e91760494073-seller-bg.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\sliders\\efc2f457-f252-46ad-8007-f311c8966f0dproduct-7.jpg",
-      "PackagePath": "staticwebassets\\uploads\\sliders\\efc2f457-f252-46ad-8007-f311c8966f0dproduct-7.jpg"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PustokTemp.Microsoft.AspNetCore.StaticWebAssets.props",
