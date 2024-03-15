@@ -8053,6 +8053,10 @@
       "PackagePath": "staticwebassets\\uploads\\sliders\\dc5e5802-362a-44ac-bd0a-e91760494073-seller-bg.jpg"
     },
     {
+      "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\sliders\\efc2f457-f252-46ad-8007-f311c8966f0dproduct-7.jpg",
+      "PackagePath": "staticwebassets\\uploads\\sliders\\efc2f457-f252-46ad-8007-f311c8966f0dproduct-7.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PustokTemp.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

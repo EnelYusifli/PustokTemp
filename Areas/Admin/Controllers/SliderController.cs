@@ -2,22 +2,23 @@
 using PustokTemp.Models;
 using Microsoft.AspNetCore.Mvc;
 using PustokTemp.Extensions;
+using PustokTemp.Business.Interfaces;
+using PustokTemp.CustomExceptions.BookExceptions;
+using PustokTemp.CustomExceptions.Common;
 
 namespace EternaMVC.Areas.Admin.Controllers;
 [Area("Admin")]
 public class SliderController : Controller
 {
-    private readonly PustokDbContext _context;
-    private readonly IWebHostEnvironment _env;
+    private readonly ISliderService _sliderService;
 
-    public SliderController(PustokDbContext context, IWebHostEnvironment env)
+    public SliderController(ISliderService sliderService)
     {
-        _context = context;
-        _env = env;
+        _sliderService = sliderService;
     }
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-        List<Slider> sliders = _context.Sliders.ToList();
+        List<Slider> sliders = await _sliderService.GetAllAsync();
         return View(sliders);
     }
     public IActionResult Create()
@@ -29,76 +30,89 @@ public class SliderController : Controller
     public async Task<IActionResult> Create(Slider slider)
     {
         if (!ModelState.IsValid) return View();
-        if (slider.ImageFile is null)
+        try
         {
-            ModelState.AddModelError("ImageFile", "Image must be uploaded");
+            _sliderService.CreateAsync(slider);
+        }
+        catch (ImageCannotBeNullException ex)
+        {
+            ModelState.AddModelError(ex.Property,ex.Message);
             return View();
         }
-        if (!(slider.ImageFile.ContentType == "image/jpeg" || slider.ImageFile.ContentType == "image/png"))
+        catch (UnableContentTypeException ex)
         {
-            ModelState.AddModelError("ImageFile", "Content type must be jpeg or png");
+            ModelState.AddModelError(ex.Property, ex.Message);
             return View();
         }
-        if (slider.ImageFile.Length > 2097152)
+        catch (MoreThanMaxLengthException ex)
         {
-            ModelState.AddModelError("ImageFile", "Size type must be less than 2mb");
+            ModelState.AddModelError(ex.Property, ex.Message);
             return View();
         }
-        slider.CreatedDate = DateTime.UtcNow.AddHours(4);
-        slider.ModifiedDate = DateTime.UtcNow.AddHours(4);
-        slider.ImageUrl = slider.ImageFile.SaveFile(_env.WebRootPath, "uploads/sliders");
-        await _context.Sliders.AddAsync(slider);
-        await _context.SaveChangesAsync();
+        catch (Exception ex)
+        {
+            ModelState.AddModelError("",ex.Message);
+            return View();
+        }
         return RedirectToAction("Index");
     }
-    public IActionResult Update(int id)
+    public async Task<IActionResult> Update(int id)
     {
-        Slider slider = _context.Sliders.FirstOrDefault(x => x.Id == id);
-        if (slider == null) throw new Exception();
+        try
+        {
+        Slider slider = await _sliderService.GetByIdAsync(id);
         return View(slider);
+        }
+        catch (EntityCannotBeFoundException ex)
+        {
+            ModelState.AddModelError("", ex.Message);
+            return View();
+        }
+        catch(Exception ex)
+        {
+            ModelState.AddModelError("", ex.Message);
+            return View();
+        }
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Update(Slider slider)
     {
-        Slider sld = _context.Sliders.FirstOrDefault(x => x.Id == slider.Id);
-        if (slider == null) throw new Exception();
-        if (!ModelState.IsValid) return View();
-        if (slider.ImageFile is not null)
+        if (!ModelState.IsValid) return View(slider);
+        try
         {
-            if (!(slider.ImageFile.ContentType == "image/jpeg" || slider.ImageFile.ContentType == "image/png"))
-            {
-                ModelState.AddModelError("ImageFile", "Content type must be jpeg or png");
-                return View();
-            }
-            if (slider.ImageFile.Length > 2097152)
-            {
-                ModelState.AddModelError("ImageFile", "Size type must be less than 2mb");
-                return View();
-            }
-            FileExtension.DeleteFile(_env.WebRootPath, "uploads/sliders", sld.ImageUrl);
-            sld.ImageUrl = slider.ImageUrl = slider.ImageFile.SaveFile(_env.WebRootPath, "uploads/sliders");
+            _sliderService.UpdateAsync(slider);
         }
-        sld.ModifiedDate = DateTime.UtcNow.AddHours(4);
-        sld.Title1 = slider.Title1;
-        sld.Title2 = slider.Title2;
-        sld.Desc = slider.Desc;
-        sld.IsDeactive = slider.IsDeactive;
-        sld.RedirectUrlText = slider.RedirectUrlText;
-        sld.RedirectUrl = slider.RedirectUrl;
-        await _context.SaveChangesAsync();
+        catch (UnableContentTypeException ex)
+        {
+            ModelState.AddModelError(ex.Property, ex.Message);
+            return View();
+        }
+        catch (MoreThanMaxLengthException ex)
+        {
+            ModelState.AddModelError(ex.Property, ex.Message);
+            return View();
+        }
+        catch (Exception ex)
+        {
+            ModelState.AddModelError("", ex.Message);
+            return View();
+        }
         return RedirectToAction("Index");
     }
 
-    public IActionResult Delete(int id)
+    public async Task<IActionResult> Delete(int id)
     {
-        Slider? sld = _context.Sliders.FirstOrDefault(x => x.Id == id);
-        if (sld == null)
+        try
+        {
+            await _sliderService.DeleteAsync(id);
+            return Ok();
+        }
+        catch (Exception ex)
+        {
+            ModelState.AddModelError("", ex.Message);
             return NotFound();
-        FileExtension.DeleteFile(_env.WebRootPath, "uploads/sliders", sld.ImageUrl);
-        _context.Sliders.Remove(sld);
-        _context.SaveChanges();
-        return Ok();
+        }
     }
 }

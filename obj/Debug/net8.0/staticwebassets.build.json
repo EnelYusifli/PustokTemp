@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Lek48BkMQRbq9miShe/wt9B5gZ0tkk7+bkksTcv1ESs=",
+  "Hash": "XG2PnE2Lfji97abcQD1C44stfWV0uWVRwtysJIQy9Mg=",
   "Source": "PustokTemp",
   "BasePath": "_content/PustokTemp",
   "Mode": "Default",
@@ -38281,6 +38281,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\sliders\\dc5e5802-362a-44ac-bd0a-e91760494073-seller-bg.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\sliders\\efc2f457-f252-46ad-8007-f311c8966f0dproduct-7.jpg",
+      "SourceId": "PustokTemp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\",
+      "BasePath": "_content/PustokTemp",
+      "RelativePath": "uploads/sliders/efc2f457-f252-46ad-8007-f311c8966f0dproduct-7.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\sliders\\efc2f457-f252-46ad-8007-f311c8966f0dproduct-7.jpg"
     }
   ]
 }
