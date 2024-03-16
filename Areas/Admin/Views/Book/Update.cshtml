@@ -95,6 +95,26 @@
             <span asp-validation-for="HoverImgFile" style="color:red"></span>
         </div>
         <div class="mb-3">
+            @{
+                if ((Model.BookImages
+                .Where(x => x.IsPoster == null)) is not null)
+                {
+                    <div class="container mt-5">
+                        <div class="row">
+                            @foreach (var img in (Model.BookImages
+                                .Where(x => x.IsPoster == null)))
+                            {
+                                <div style="position: relative; display: inline-block;">
+                                    <img src="~/uploads/books/@img.Url" alt="Image" style="width:130px">
+                                    <span style="position: absolute; top: 1px; right: 1px; cursor: pointer; color: red;">X</span>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                }
+            }
+
             <label for="DetailImgFiles" class="form-label">DetailImgFiles</label><br>
             <input asp-for="DetailImgFiles" class="form"><br>
             <span asp-validation-for="DetailImgFiles" style="color:red"></span>
@@ -102,6 +122,9 @@
         <button type="submit" class="btn btn-primary">Update</button>
     </form>
 </div>
+
+
+
 
 
 
