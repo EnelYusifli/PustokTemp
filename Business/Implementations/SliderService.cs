@@ -79,7 +79,7 @@ public class SliderService : ISliderService
     public async Task SoftDeleteAsync(int id)
     {
         var data = await _context.Sliders.FindAsync(id);
-        if (data is null) throw new EntityCannotBeFoundException("Author Cannot be Found");
+        if (data is null) throw new EntityCannotBeFoundException("Slider Cannot be Found");
         data.IsDeactive = !data.IsDeactive;
 
         await _context.SaveChangesAsync();

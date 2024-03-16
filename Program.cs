@@ -16,6 +16,7 @@ builder.Services.AddDbContext<PustokDbContext>(opt =>
 builder.Services.AddScoped<IGenreService, GenreService>();
 builder.Services.AddScoped<IAuthorService, AuthorService>();
 builder.Services.AddScoped<ISliderService, SliderService>();
+builder.Services.AddScoped<IBookService, BookService>();
 
 var app = builder.Build();
 

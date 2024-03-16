@@ -46,7 +46,7 @@ namespace PustokTemp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Authors");
+                    b.ToTable("Authors", (string)null);
                 });
 
             modelBuilder.Entity("PustokTemp.Models.Book", b =>
@@ -116,7 +116,7 @@ namespace PustokTemp.Migrations
 
                     b.HasIndex("GenreId");
 
-                    b.ToTable("Books");
+                    b.ToTable("Books", (string)null);
                 });
 
             modelBuilder.Entity("PustokTemp.Models.BookImage", b =>
@@ -150,7 +150,7 @@ namespace PustokTemp.Migrations
 
                     b.HasIndex("BookId");
 
-                    b.ToTable("BookImages");
+                    b.ToTable("BookImages", (string)null);
                 });
 
             modelBuilder.Entity("PustokTemp.Models.Genre", b =>
@@ -177,7 +177,7 @@ namespace PustokTemp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Genres");
+                    b.ToTable("Genres", (string)null);
                 });
 
             modelBuilder.Entity("PustokTemp.Models.Slider", b =>
@@ -225,7 +225,7 @@ namespace PustokTemp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Sliders");
+                    b.ToTable("Sliders", (string)null);
                 });
 
             modelBuilder.Entity("PustokTemp.Models.Book", b =>
