@@ -72,7 +72,7 @@ public class BookService : IBookService
 
     public async Task DeleteAsync(int id)
     {
-        var existBook = await _context.Books.Include(x => x.BookImages).FirstOrDefaultAsync(x => x.Id == id);
+        var existBook = await GetByIdAsync(id);
         if (existBook == null) throw new EntityCannotBeFoundException("Book cannot be found");
         foreach (var bookImg in existBook.BookImages)
         {
@@ -128,9 +128,70 @@ public class BookService : IBookService
 
         await _context.SaveChangesAsync();
     }
-
-    public Task UpdateAsync(Book book)
+    public async Task UpdateAsync(Book book)
     {
-        throw new NotImplementedException();
+        if (book is null)
+            throw new ArgumentNullException(nameof(book));
+
+        Book? existBook = await _context.Books
+            .Include(x => x.BookImages)
+            .FirstOrDefaultAsync(x => x.Id == book.Id);
+
+        if (existBook is null)
+            throw new EntityCannotBeFoundException("Book not found.");
+
+        existBook.Title = book.Title;
+        existBook.Desc = book.Desc;
+        existBook.BookCode = book.BookCode;
+        existBook.CostPrice = book.CostPrice;
+        existBook.SalePrice = book.SalePrice;
+        existBook.DiscountPercent = book.DiscountPercent;
+        existBook.StockCount = book.StockCount;
+        existBook.IsFeatured = book.IsFeatured;
+        existBook.IsNew = book.IsNew;
+        existBook.IsBestSeller = book.IsBestSeller;
+        existBook.IsInStock = book.IsInStock;
+        existBook.GenreId = book.GenreId;
+        existBook.AuthorId = book.AuthorId;
+
+        if (book.HoverImgFile is not null)
+            await HandleBookImage(book.HoverImgFile, existBook.Id, false);
+
+        if (book.PosterImgFile is not null)
+            await HandleBookImage(book.PosterImgFile, existBook.Id, true);
+
+        if (book.DetailImgFiles is not null)
+        {
+            foreach (var img in book.DetailImgFiles)
+            {
+                await HandleBookImage(img, existBook.Id, null);
+            }
+        }
+        await _context.SaveChangesAsync();
     }
+
+    private async Task HandleBookImage(IFormFile imgFile, int bookId, bool? isPoster)
+    {
+        if (!(imgFile.ContentType == "image/jpeg" || imgFile.ContentType == "image/png"))
+            throw new UnableContentTypeException("Content type must be jpeg or png.", nameof(imgFile));
+
+        if (imgFile.Length > 2097152)
+            throw new MoreThanMaxLengthException("Size must be less than 2mb.", nameof(imgFile));
+
+        var existingImage = await _context.BookImages.FirstOrDefaultAsync(x => x.BookId == bookId && x.IsPoster == isPoster);
+        if (existingImage is not null)
+        {
+            FileExtension.DeleteFile(_env.WebRootPath, "uploads/books", existingImage.Url);
+            _context.BookImages.Remove(existingImage);
+        }
+
+        BookImage bookImage = new BookImage
+        {
+            BookId = bookId,
+            Url = imgFile.SaveFile(_env.WebRootPath, "uploads/books"),
+            IsPoster = isPoster
+        };
+        await _context.BookImages.AddAsync(bookImage);
+    }
+
 }
