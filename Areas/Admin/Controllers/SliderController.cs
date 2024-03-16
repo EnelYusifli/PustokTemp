@@ -32,7 +32,7 @@ public class SliderController : Controller
         if (!ModelState.IsValid) return View();
         try
         {
-            _sliderService.CreateAsync(slider);
+            await _sliderService.CreateAsync(slider);
         }
         catch (ImageCannotBeNullException ex)
         {
@@ -82,7 +82,7 @@ public class SliderController : Controller
         if (!ModelState.IsValid) return View(slider);
         try
         {
-            _sliderService.UpdateAsync(slider);
+            await _sliderService.UpdateAsync(slider);
         }
         catch (UnableContentTypeException ex)
         {

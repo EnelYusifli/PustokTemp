@@ -5,7 +5,6 @@ using PustokTemp.CustomExceptions.Common;
 using PustokTemp.DAL;
 using PustokTemp.Extensions;
 using PustokTemp.Models;
-using System.Linq;
 using System.Linq.Expressions;
 
 namespace PustokTemp.Business.Implementations;
@@ -83,9 +82,13 @@ public class BookService : IBookService
         await _context.SaveChangesAsync();
     }
 
-    public async Task<List<Book>> GetAllAsync(Expression<Func<Book, bool>>? expression = null, params string[] includes)
+    public async Task<List<Book>> GetAllAsync(Expression<Func<Book, bool>>? expression = null)
     {
-        var query = _context.Books.AsQueryable();
+        var query = _context.Books
+            .Include(x=>x.Author)
+            .Include(x=>x.Genre)
+            .Include(x=>x.BookImages)
+            .AsQueryable();
 
         return expression is not null
                 ? await query.Where(expression).ToListAsync()
@@ -94,7 +97,11 @@ public class BookService : IBookService
 
     public async Task<Book> GetByIdAsync(int id)
     {
-        var data = await _context.Books.FindAsync(id);
+        var data = await _context.Books
+            .Include(x => x.Author)
+            .Include(x => x.Genre)
+            .Include(x => x.BookImages)
+            .FirstOrDefaultAsync(x=>x.Id==id);
         if (data is null) throw new EntityCannotBeFoundException();
 
         return data;
@@ -102,7 +109,11 @@ public class BookService : IBookService
 
     public async Task<Book> GetSingleAsync(Expression<Func<Book, bool>>? expression = null)
     {
-        var query = _context.Books.AsQueryable();
+        var query = _context.Books
+            .Include(x => x.Author)
+            .Include(x => x.Genre)
+            .Include(x => x.BookImages)
+            .AsQueryable();
 
         return expression is not null
                 ? await query.Where(expression).FirstOrDefaultAsync()

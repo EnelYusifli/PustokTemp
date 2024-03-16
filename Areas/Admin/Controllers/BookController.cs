@@ -1,11 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using PustokTemp.Business.Implementations;
+﻿using Microsoft.AspNetCore.Mvc;
 using PustokTemp.Business.Interfaces;
 using PustokTemp.CustomExceptions.BookExceptions;
 using PustokTemp.DAL;
-using PustokTemp.Extensions;
 using PustokTemp.Models;
 
 namespace PustokTemp.Areas.Admin.Controllers;
@@ -21,9 +17,9 @@ public class BookController : Controller
         _bookService = bookService;
         _context = context;
     }
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-        List<Book> books = _context.Books.Include(x => x.BookImages).Include(x => x.Author).Include(x => x.Genre).ToList();
+        List<Book> books = await _bookService.GetAllAsync();
         return View(books);
     }
     public IActionResult Create()
