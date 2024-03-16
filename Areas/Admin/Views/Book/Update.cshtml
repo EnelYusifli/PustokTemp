@@ -69,11 +69,27 @@
             <span asp-validation-for="IsDeactive" style="color:red"></span>
         </div>
         <div class="mb-3">
+            <div>
+                @{
+                    string? posterUrl = Model.BookImages
+                    .Where(x => x.IsPoster == true)
+                    .FirstOrDefault().Url;
+                }
+                <img src="~/uploads/books/@posterUrl" alt="Alternate Text" style="width:130px" />
+            </div>
             <label for="PosterImgFile" class="form-label">PosterImgFile</label><br>
             <input asp-for="PosterImgFile" class="form"><br>
             <span asp-validation-for="PosterImgFile" style="color:red"></span>
         </div>
         <div class="mb-3">
+            <div>
+                @{
+                    string? hoverUrl = Model.BookImages
+                    .Where(x => x.IsPoster == false)
+                    .FirstOrDefault().Url;
+                }
+                <img src="~/uploads/books/@hoverUrl" alt="Alternate Text" style="width:130px" />
+            </div>
             <label for="HoverImgFile" class="form-label">HoverImgFile</label><br>
             <input asp-for="HoverImgFile" class="form"><br>
             <span asp-validation-for="HoverImgFile" style="color:red"></span>

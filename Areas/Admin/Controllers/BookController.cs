@@ -104,7 +104,6 @@ public class BookController : Controller
         }
         return RedirectToAction("Index");
     }
-
     public async Task<IActionResult> Delete(int id)
     {
         try
