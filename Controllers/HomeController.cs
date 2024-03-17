@@ -31,6 +31,7 @@ public class HomeController : Controller
             .Include(x=>x.Genre)
             .Include(x=>x.BookImages)
             .FirstOrDefaultAsync(x=>x.Id==id);
+        if (book is null) throw new Exception();
         return View(book);
     }
 }

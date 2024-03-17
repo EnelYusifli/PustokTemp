@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using PustokTemp.Business.Interfaces;
 using PustokTemp.CustomExceptions.BookExceptions;
+using PustokTemp.CustomExceptions.Common;
 using PustokTemp.DAL;
 using PustokTemp.Extensions;
 using PustokTemp.Models;
@@ -127,26 +128,15 @@ public class BookController : Controller
     {
         try
         {
-            // Find the image in the database based on the filename
-            var image = await _context.BookImages.FirstOrDefaultAsync(x => x.Url == filename && x.IsPoster == null);
-
-            if (image == null)
-            {
-                return NotFound();
-            }
-
-            // Delete the image file from the server
-            _bookService.HandleDetailImage(filename);
-
-            // Remove the image record from the database
-            _context.BookImages.Remove(image);
-            await _context.SaveChangesAsync();
-
+            await _bookService.HandleDetailImage(filename);
             return Ok();
+        }
+        catch(EntityCannotBeFoundException ex)
+        {
+            return NotFound();
         }
         catch (Exception ex)
         {
-            // Handle any exceptions that may occur during the deletion process
             return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
         }
     }

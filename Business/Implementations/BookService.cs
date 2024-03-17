@@ -210,8 +210,10 @@ public class BookService : IBookService
     public async Task HandleDetailImage(string fileName)
     {
         BookImage bookImage = await _context.BookImages.FirstOrDefaultAsync(x => x.Url == fileName);
+        if (bookImage is null) throw new EntityCannotBeFoundException("Image cannot be found");
         FileExtension.DeleteFile(_env.WebRootPath, "uploads/books", bookImage.Url);
         _context.BookImages.Remove(bookImage);
+        await _context.SaveChangesAsync();
     }
 
 }
