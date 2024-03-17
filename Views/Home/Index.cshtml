@@ -173,7 +173,7 @@ Home Slider Tab
                                             @item.Author.FullName
                                         </a>
                                         <h3>
-                                            <a href="product-details.html">
+                                            <a asp-controller="Home" asp-action="Detail" asp-route-id="@item.Id">
                                                 @item.Title
                                             </a>
                                         </h3>
@@ -182,7 +182,7 @@ Home Slider Tab
                                         <div class="card-image">
                                             <img src="~/uploads/books/@item.BookImages.Where(x=>x.IsPoster==true).FirstOrDefault().Url" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a asp-controller="Home" asp-action="Detail" asp-route-id="@item.Id" class="hover-image">
                                                     <img src="~/uploads/books/@item.BookImages.Where(x=>x.IsPoster==false).FirstOrDefault().Url" alt="">
                                                 </a>
                                                 <div class="hover-btns">
@@ -240,7 +240,7 @@ Home Slider Tab
                                             @item.Author.FullName
                                         </a>
                                         <h3>
-                                            <a href="product-details.html">
+                                            <a asp-controller="Home" asp-action="Detail" asp-route-id="@item.Id">
                                                 @item.Title
                                             </a>
                                         </h3>
@@ -249,7 +249,7 @@ Home Slider Tab
                                         <div class="card-image">
                                             <img src="~/uploads/books/@item.BookImages.Where(x=>x.IsPoster==true).FirstOrDefault().Url" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a asp-controller="Home" asp-action="Detail" asp-route-id="@item.Id" class="hover-image">
                                                     <img src="~/uploads/books/@item.BookImages.Where(x=>x.IsPoster==false).FirstOrDefault().Url" alt="">
                                                 </a>
                                                 <div class="hover-btns">
@@ -306,7 +306,7 @@ Home Slider Tab
                                             @item.Author.FullName
                                         </a>
                                         <h3>
-                                            <a href="product-details.html">
+                                            <a asp-controller="Home" asp-action="Detail" asp-route-id="@item.Id">
                                                 @item.Title
                                             </a>
                                         </h3>
@@ -315,7 +315,7 @@ Home Slider Tab
                                         <div class="card-image">
                                             <img src="~/uploads/books/@item.BookImages.Where(x=>x.IsPoster==true).FirstOrDefault().Url" alt="">
                                             <div class="hover-contents">
-                                                <a href="product-details.html" class="hover-image">
+                                                <a asp-controller="Home" asp-action="Detail" asp-route-id="@item.Id" class="hover-image">
                                                     <img src="~/uploads/books/@item.BookImages.Where(x=>x.IsPoster==false).FirstOrDefault().Url" alt="">
                                                 </a>
                                                 <div class="hover-btns">

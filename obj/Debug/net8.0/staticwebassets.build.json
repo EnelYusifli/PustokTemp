@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LbkW+iKZjqxAeywpncwsM6dY0F9BwgOzN6BE3d40o6M=",
+  "Hash": "ZnQvmx6i2e10GEL8IMZvk68BJvrd1omRIbCGQf8ruvo=",
   "Source": "PustokTemp",
   "BasePath": "_content/PustokTemp",
   "Mode": "Default",
@@ -37466,25 +37466,6 @@
       "OriginalItemSpec": "wwwroot\\uploads\\books\\1b35653a-10ee-47d7-a1a7-57977eff0beb-product-1.jpg"
     },
     {
-      "Identity": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\22698a7c-daff-4c05-9b23-e8c46933342dproduct-7.jpg",
-      "SourceId": "PustokTemp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\",
-      "BasePath": "_content/PustokTemp",
-      "RelativePath": "uploads/books/22698a7c-daff-4c05-9b23-e8c46933342dproduct-7.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\books\\22698a7c-daff-4c05-9b23-e8c46933342dproduct-7.jpg"
-    },
-    {
       "Identity": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\3003cd79-ea8f-4d8b-905d-72d1b72cd9d2-details-4.jpg",
       "SourceId": "PustokTemp",
       "SourceType": "Discovered",
@@ -38112,25 +38093,6 @@
       "OriginalItemSpec": "wwwroot\\uploads\\books\\98e993c2-b659-4a46-8f44-faec74597232product-9.jpg"
     },
     {
-      "Identity": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\9d2faa5b-8645-4563-861b-fac65dc776c7product-7.jpg",
-      "SourceId": "PustokTemp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\",
-      "BasePath": "_content/PustokTemp",
-      "RelativePath": "uploads/books/9d2faa5b-8645-4563-861b-fac65dc776c7product-7.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\books\\9d2faa5b-8645-4563-861b-fac65dc776c7product-7.jpg"
-    },
-    {
       "Identity": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\a2eab2e0-f5e8-4db2-8772-f00b6bfa94ebproduct-5.jpg",
       "SourceId": "PustokTemp",
       "SourceType": "Discovered",
@@ -38283,25 +38245,6 @@
       "OriginalItemSpec": "wwwroot\\uploads\\books\\be55c2f7-cbfd-41a0-84df-ab570f77ef52-product-1.jpg"
     },
     {
-      "Identity": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\c4f427d8-58d3-4f2d-b467-5b0f56247b74product-1.jpg",
-      "SourceId": "PustokTemp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\",
-      "BasePath": "_content/PustokTemp",
-      "RelativePath": "uploads/books/c4f427d8-58d3-4f2d-b467-5b0f56247b74product-1.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\books\\c4f427d8-58d3-4f2d-b467-5b0f56247b74product-1.jpg"
-    },
-    {
       "Identity": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\c5b9f2be-829c-4497-8ed3-8ec201270764-product-1.jpg",
       "SourceId": "PustokTemp",
       "SourceType": "Discovered",
@@ -38433,25 +38376,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\books\\d6580578-5c28-4208-a406-907f3d3970c1product-6.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\d73146d1-2f69-4eca-bb8f-fc86246b323aproduct-8.jpg",
-      "SourceId": "PustokTemp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\",
-      "BasePath": "_content/PustokTemp",
-      "RelativePath": "uploads/books/d73146d1-2f69-4eca-bb8f-fc86246b323aproduct-8.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploads\\books\\d73146d1-2f69-4eca-bb8f-fc86246b323aproduct-8.jpg"
     },
     {
       "Identity": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\d808b1ef-9d07-419c-9375-55d13f24bfbcproduct-13.jpg",
