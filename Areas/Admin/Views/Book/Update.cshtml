@@ -1,4 +1,5 @@
-﻿@model Book
+﻿@using PustokTemp.Business.Interfaces
+@model Book
 @{
     List<Author> authors = ViewBag.Authors;
     List<Genre> genres = ViewBag.Genres;
@@ -96,35 +97,43 @@
         </div>
         <div class="mb-3">
             @{
-                if ((Model.BookImages
-                .Where(x => x.IsPoster == null)) is not null)
+                if ((Model.BookImages.Where(x => x.IsPoster == null)) is not null)
                 {
                     <div class="container mt-5">
                         <div class="row">
-                            @foreach (var img in (Model.BookImages
-                                .Where(x => x.IsPoster == null)))
+                            @foreach (var img in (Model.BookImages.Where(x => x.IsPoster == null)))
                             {
                                 <div style="position: relative; display: inline-block;">
                                     <img src="~/uploads/books/@img.Url" alt="Image" style="width:130px">
-                                    <span style="position: absolute; top: 1px; right: 1px; cursor: pointer; color: red;">X</span>
+                                    <span class="delete" data-filename="@img.Url" onclick="deleteDetailImage('@img.Url')" style="position: absolute; top: 1px; right: 1px; cursor: pointer; color: red;">X</span>
                                 </div>
                             }
                         </div>
                     </div>
-
                 }
             }
-
             <label for="DetailImgFiles" class="form-label">DetailImgFiles</label><br>
             <input asp-for="DetailImgFiles" class="form"><br>
             <span asp-validation-for="DetailImgFiles" style="color:red"></span>
         </div>
+
         <button type="submit" class="btn btn-primary">Update</button>
     </form>
 </div>
 
-
-
-
-
-
+<script>
+    function deleteDetailImage(filename) {
+        fetch(`/Admin/Book/Update?filename=${filename}`, {
+            method: 'DELETE',
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                window.location.reload(true)
+            })
+            .catch(error => {
+                console.error('There was a problem with your fetch operation:', error);
+            });
+    }
+</script>

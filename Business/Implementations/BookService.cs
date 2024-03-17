@@ -6,6 +6,7 @@ using PustokTemp.DAL;
 using PustokTemp.Extensions;
 using PustokTemp.Models;
 using System.Linq.Expressions;
+using System.Net;
 
 namespace PustokTemp.Business.Implementations;
 
@@ -163,9 +164,20 @@ public class BookService : IBookService
 
         if (book.DetailImgFiles is not null)
         {
-            foreach (var img in book.DetailImgFiles)
+            foreach (var imgFile in book.DetailImgFiles)
             {
-                await HandleBookImage(img, existBook.Id, null);
+                if (!(imgFile.ContentType == "image/jpeg" || imgFile.ContentType == "image/png"))
+                    throw new UnableContentTypeException("Content type must be jpeg or png.", nameof(imgFile));
+
+                if (imgFile.Length > 2097152)
+                    throw new MoreThanMaxLengthException("Size must be less than 2mb.", nameof(imgFile));
+                BookImage bookImage = new BookImage
+                {
+                    BookId = existBook.Id,
+                    Url = imgFile.SaveFile(_env.WebRootPath, "uploads/books"),
+                    IsPoster = null
+                };
+                await _context.BookImages.AddAsync(bookImage);
             }
         }
         await _context.SaveChangesAsync();
@@ -193,6 +205,13 @@ public class BookService : IBookService
             IsPoster = isPoster
         };
         await _context.BookImages.AddAsync(bookImage);
+    }
+
+    public async Task HandleDetailImage(string fileName)
+    {
+        BookImage bookImage = await _context.BookImages.FirstOrDefaultAsync(x => x.Url == fileName);
+        FileExtension.DeleteFile(_env.WebRootPath, "uploads/books", bookImage.Url);
+        _context.BookImages.Remove(bookImage);
     }
 
 }

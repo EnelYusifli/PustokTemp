@@ -12,4 +12,5 @@ public interface IBookService
     Task UpdateAsync(Book book);
     Task DeleteAsync(int id);
     Task SoftDeleteAsync(int id);
+    Task HandleDetailImage(string fileName);
 }

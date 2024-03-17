@@ -7845,10 +7845,6 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\017db27e-2071-4a0b-9d17-63069fb27049product-6.jpg",
-      "PackagePath": "staticwebassets\\uploads\\books\\017db27e-2071-4a0b-9d17-63069fb27049product-6.jpg"
-    },
-    {
       "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\0250580d-af47-4d82-b384-c541777559db-product-1.jpg",
       "PackagePath": "staticwebassets\\uploads\\books\\0250580d-af47-4d82-b384-c541777559db-product-1.jpg"
     },
@@ -7887,6 +7883,10 @@
     {
       "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\22698a7c-daff-4c05-9b23-e8c46933342dproduct-7.jpg",
       "PackagePath": "staticwebassets\\uploads\\books\\22698a7c-daff-4c05-9b23-e8c46933342dproduct-7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\3003cd79-ea8f-4d8b-905d-72d1b72cd9d2-details-4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\books\\3003cd79-ea8f-4d8b-905d-72d1b72cd9d2-details-4.jpg"
     },
     {
       "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\336042f3-a035-4548-9224-6109fab8cbbcproduct-4.jpg",
@@ -7949,12 +7949,12 @@
       "PackagePath": "staticwebassets\\uploads\\books\\51d42a7d-1783-42fc-8076-8fa38a44de97-product-1.jpg"
     },
     {
-      "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\5579139d-b7d2-42a7-ab2b-130dc56bb126product-4.jpg",
-      "PackagePath": "staticwebassets\\uploads\\books\\5579139d-b7d2-42a7-ab2b-130dc56bb126product-4.jpg"
+      "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\529e92d2-0fb1-4cb7-a1c2-b03c29bf142eproduct-2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\books\\529e92d2-0fb1-4cb7-a1c2-b03c29bf142eproduct-2.jpg"
     },
     {
-      "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\58ad7dbc-c279-4af0-ad15-edde36bc0455product-5.jpg",
-      "PackagePath": "staticwebassets\\uploads\\books\\58ad7dbc-c279-4af0-ad15-edde36bc0455product-5.jpg"
+      "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\5579139d-b7d2-42a7-ab2b-130dc56bb126product-4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\books\\5579139d-b7d2-42a7-ab2b-130dc56bb126product-4.jpg"
     },
     {
       "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\60e7b2df-b88a-4f87-8b96-d6fa3de371f5product-12.jpg",
@@ -8039,10 +8039,6 @@
     {
       "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\b920ade0-e6ab-4cb5-96ea-82656d8d0803-product-1.jpg",
       "PackagePath": "staticwebassets\\uploads\\books\\b920ade0-e6ab-4cb5-96ea-82656d8d0803-product-1.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\bb9310e3-0768-44eb-a632-cbe8433a62b7product-4.jpg",
-      "PackagePath": "staticwebassets\\uploads\\books\\bb9310e3-0768-44eb-a632-cbe8433a62b7product-4.jpg"
     },
     {
       "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\bdb4bce7-0b21-442f-a110-5d5673732bda-product-1.jpg",
@@ -8131,10 +8127,6 @@
     {
       "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\ef40f578-5d9e-4ffa-8f92-19e0b91cf29e-details-1.jpg",
       "PackagePath": "staticwebassets\\uploads\\books\\ef40f578-5d9e-4ffa-8f92-19e0b91cf29e-details-1.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\f01434b4-8d58-493e-978a-c7456dfdc782product-2.jpg",
-      "PackagePath": "staticwebassets\\uploads\\books\\f01434b4-8d58-493e-978a-c7456dfdc782product-2.jpg"
     },
     {
       "Id": "C:\\Users\\Enel\\source\\repos\\PustokTemp\\PustokTemp\\wwwroot\\uploads\\books\\f1297f00-7914-4f1c-b940-ec1c4b4ab9aa-product-1.jpg",
